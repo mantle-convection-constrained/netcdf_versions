@@ -1,4 +1,4 @@
-# NetcdfVersionsForTerra
+# NetcdfVersions for Terra
 
 Repository for documenting the version history of the structure of netCDF files that are written out by Terra and read in by TerraTools.
 
