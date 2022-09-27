@@ -1,0 +1,94 @@
+File storing the strucutre of version v0.1 of NetCDF output files
+for TERRA simulations. Strucutre of new versions may be produced and 
+copied to a corresponding new file using 
+'ncdump -h <file>' (requires NCO netCDF operators).
+
+
+### Version v0.1 ###
+
+### T-C-V ###
+
+dimensions:
+	nps = 1445 ;
+	Depths = 17 ;
+variables:
+	float Depths(Depths) ;
+		Depths:units = "Km" ;
+		Depths:Radius = 6370. ;
+	float Velocity_x(Depths, nps) ;
+		Velocity_x:units = "m/s" ;
+	float Velocity_y(Depths, nps) ;
+		Velocity_y:units = "m/s" ;
+	float Velocity_z(Depths, nps) ;
+		Velocity_z:units = "m/s" ;
+	float LherzFrac(Depths, nps) ;
+	float BasaltFrac(Depths, nps) ;
+	float Temperature(Depths, nps) ;
+		Temperature:units = "K" ;
+	float Latitude(nps) ;
+		Latitude:units = "Degrees" ;
+	float Longitude(nps) ;
+		Longitude:units = "Degrees" ;
+
+// global attributes:
+		:Version = 0.1 ;
+
+
+### SEIS ###
+
+dimensions:
+	nps = 1445 ;
+	Depths = 17 ;
+variables:
+	float Depths(Depths) ;
+		Depths:units = "Km" ;
+		Depths:Radius = 6370. ;
+	float LherzFrac(Depths, nps) ;
+	float BasaltFrac(Depths, nps) ;
+	float Temperature(Depths, nps) ;
+		Temperature:units = "K" ;
+	float Vp(Depths, nps) ;
+		Vp:units = "Km/s" ;
+	float Vs(Depths, nps) ;
+		Vs:units = "Km/s" ;
+	float Vp_anelastic(Depths, nps) ;
+		Vp_anelastic:units = "Km/s" ;
+	float Vs_anelastic(Depths, nps) ;
+		Vs_anelastic:units = "Km/s" ;
+	float V_bulk(Depths, nps) ;
+		V_bulk:units = "Km/s" ;
+	float Density(Depths, nps) ;
+		Density:units = "Kg/m3" ;
+	float Latitude(nps) ;
+		Latitude:units = "Degrees" ;
+	float Longitude(nps) ;
+		Longitude:units = "Degrees" ;
+
+// global attributes:
+		:Version = 0.1 ;
+
+
+### Layer ###
+
+dimensions:
+	nps = 1445 ;
+variables:
+	float Latitude(nps) ;
+		Latitude:units = "Degrees" ;
+	float Longitude(nps) ;
+		Longitude:units = "Degrees" ;
+	float Velocity_x(nps) ;
+		Velocity_x:units = "m/s" ;
+	float Velocity_y(nps) ;
+		Velocity_y:units = "m/s" ;
+	float Velocity_z(nps) ;
+		Velocity_z:units = "m/s" ;
+	float Temperature(nps) ;
+		Temperature:units = "K" ;
+	float Surface\ Dynamic\ Topography(nps) ;
+		Surface\ Dynamic\ Topography:units = "Km" ;
+
+// global attributes:
+		:Version = 0.1 ;
+
+

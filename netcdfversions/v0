@@ -1,0 +1,63 @@
+File storing the strucutre of version v0 of NetCDF output files
+for TERRA simulations. v0 pre-dates the versioning of files and thus 
+does not include a version number as a global attribute. 
+Strucutre of new versions may be produced and copied to a corresponding 
+new file using:
+'ncdump -h <file>' (requires NCO netCDF operators).
+
+
+### Version v0 ###
+
+###T-C-V###
+
+dimensions:
+	Depths = 65 ;
+	nps = 1445 ;
+variables:
+	float Depths(Depths) ;
+		Depths:units = "Km" ;
+	float Latitude(record, Depths, nps) ;
+		Latitude:units = "Degrees" ;
+	float Longitude(record, Depths, nps) ;
+		Longitude:units = "Degrees" ;
+	float Velocity_x(record, Depths, nps) ;
+		Velocity_x:units = "Km/s" ;
+	float Velocity_y(record, Depths, nps) ;
+		Velocity_y:units = "Km/s" ;
+	float Velocity_z(record, Depths, nps) ;
+		Velocity_z:units = "Km/s" ;
+	float LherzFrac(record, Depths, nps) ;
+	float BasaltFrac(record, Depths, nps) ;
+	float Temperature(record, Depths, nps) ;
+		Temperature:units = "K" ;
+
+###SEIS###
+
+dimensions:
+    Depths = 65 ;
+    nps = 1445 ;
+variables:
+    float Depths(Depths) ;
+        Depths:units = "Km" ;
+    float Latitude(record, Depths, nps) ;
+        Latitude:units = "Degrees" ;
+    float Longitude(record, Depths, nps) ;
+        Longitude:units = "Degrees" ;
+    float LherzFrac(record, Depths, nps) ;
+    float BasaltFrac(record, Depths, nps) ;
+    float Temperature(record, Depths, nps) ;
+        Temperature:units = "K" ;
+    float Vp(record, Depths, nps) ;
+        Vp:units = "Km/s" ;
+    float Vs(record, Depths, nps) ;
+        Vs:units = "Km/s" ;
+    float Vp_anelastic(record, Depths, nps) ;
+        Vp_anelastic:units = "Km/s" ;
+    float Vs_anelastic(record, Depths, nps) ;
+        Vs_anelastic:units = "Km/s" ;
+    float V_bulk(record, Depths, nps) ;
+        V_bulk:units = "Km/s" ;
+    float Density(record, Depths, nps) ;
+        Density:units = "Kg/m3" ;
+
+
