@@ -22,4 +22,4 @@ The version number is linked to all file types, so changes to one file type will
 Please keep track of all changes here and consider contributing to TerraTools to help deal with the changes. 
 
 ## Acknowledgement and Support
-This project is supported by [NERC Large Grant MC-squared](https://www.cardiff.ac.uk/resea    rch/explore/find-a-project/view/2592859-mc2-mantle-circulation-constrained).
+This project is supported by [NERC Large Grant MC-squared](https://www.cardiff.ac.uk/research/explore/find-a-project/view/2592859-mc2-mantle-circulation-constrained).
