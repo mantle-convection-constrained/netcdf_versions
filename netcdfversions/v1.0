@@ -1,0 +1,129 @@
+File storing the strucutre of version v1.0 of NetCDF output files
+for TERRA simulations. Strucutre of new versions may be produced and 
+copied to a corresponding new file using 
+'ncdump -h <file>' (requires NCO netCDF operators).
+
+New in this version:
+    -Variable and dimension names standardised as lower case.
+    -Compostion added as a dimension
+    -Can now handle C=2 material
+    
+We still report the fraction of each interpreted composition at the nodes, but primordial
+material may now be included. If primordial material is included in a simulation (thkddp>0)
+then 3 compositional components fractions (harz, lherz, basalt) are written out 
+(composition dimension = 3) and the primordial fraction is the difference between 1 and the
+3 given fractions. If no primordial material is present then only 2 compositional component 
+fractions are written out (harz, lherz) and the basalt fraction is the difference between 
+1 and the 2 given fractions. 
+
+####################
+### Version v1.0 ###
+####################
+
+#############
+### T-C-V ###
+#############
+
+dimensions:
+	nps = 1445 ;
+	depths = 17 ;
+	compositions = 3 ;
+variables:
+	float depths(depths) ;
+		depths:units = "km" ;
+		depths:radius = 6370. ;
+	float velocity_x(depths, nps) ;
+		velocity_x:units = "m/s" ;
+	float velocity_y(depths, nps) ;
+		velocity_y:units = "m/s" ;
+	float velocity_z(depths, nps) ;
+		velocity_z:units = "m/s" ;
+	float temperature(depths, nps) ;
+		temperature:units = "K" ;
+	float latitude(nps) ;
+		latitude:units = "degrees" ;
+	float longitude(nps) ;
+		longitude:units = "degrees" ;
+	float composition_fractions(compositions, depths, nps) ;
+		composition_fractions:composition_1_name = "Harzburgite" ;
+		composition_fractions:composition_1_c = 0. ;
+		composition_fractions:composition_2_name = "Lherzolite" ;
+		composition_fractions:composition_2_c = 0.2 ;
+		composition_fractions:composition_3_name = "Basalt" ;
+		composition_fractions:composition_3_c = 1. ;
+		composition_fractions:composition_4_name = "Primordial" ;
+		composition_fractions:composition_4_c = 2. ;
+
+// global attributes:
+		:version = 1. ;
+		:nth_comp = "prim_frac = 1 - hzb_frac - lhz_frac - bas_frac" ;
+
+############
+### SEIS ###
+############
+
+dimensions:
+	nps = 1445 ;
+	depths = 17 ;
+	compositions = 3 ;
+variables:
+	float depths(depths) ;
+		depths:units = "km" ;
+		depths:radius = 6370. ;
+	float temperature(depths, nps) ;
+		temperature:units = "K" ;
+	float vp(depths, nps) ;
+		vp:units = "km/s" ;
+	float vs(depths, nps) ;
+		vs:units = "km/s" ;
+	float vp_anelastic(depths, nps) ;
+		vp_anelastic:units = "km/s" ;
+	float vs_anelastic(depths, nps) ;
+		vs_anelastic:units = "km/s" ;
+	float v_bulk(depths, nps) ;
+		v_bulk:units = "km/s" ;
+	float density(depths, nps) ;
+		density:units = "Kg/m3" ;
+	float latitude(nps) ;
+		latitude:units = "degrees" ;
+	float longitude(nps) ;
+		longitude:units = "degrees" ;
+	float composition_fractions(compositions, depths, nps) ;
+		composition_fractions:composition_1_name = "Harzburgite" ;
+		composition_fractions:composition_1_c = 0. ;
+		composition_fractions:composition_2_name = "Lherzolite" ;
+		composition_fractions:composition_2_c = 0.2 ;
+		composition_fractions:composition_3_name = "Basalt" ;
+		composition_fractions:composition_3_c = 1. ;
+		composition_fractions:composition_4_name = "Primordial" ;
+		composition_fractions:composition_4_c = 2. ;
+
+// global attributes:
+		:version = 1. ;
+		:nth_comp = "prim_frac = 1 - hzb_frac - lhz_frac - bas_frac" ;
+
+#############
+### Layer ###
+#############
+
+dimensions:
+	nps = 1445 ;
+variables:
+	float latitude(nps) ;
+		latitude:units = "degrees" ;
+	float longitude(nps) ;
+		longitude:units = "degrees" ;
+	float velocity_x(nps) ;
+		velocity_x:units = "m/s" ;
+	float velocity_y(nps) ;
+		velocity_y:units = "m/s" ;
+	float velocity_z(nps) ;
+		velocity_z:units = "m/s" ;
+	float temperature(nps) ;
+		temperature:units = "K" ;
+	float surface\ dynamic\ topography(nps) ;
+		surface\ dynamic\ topography:units = "km" ;
+
+// global attributes:
+		:version = 1. ;
+
