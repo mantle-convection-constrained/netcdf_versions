@@ -83,7 +83,7 @@ variables:
 	float v_bulk(depths, nps) ;
 		v_bulk:units = "km/s" ;
 	float density(depths, nps) ;
-		density:units = "Kg/m3" ;
+		density:units = "kg/m3" ;
 	float latitude(nps) ;
 		latitude:units = "degrees" ;
 	float longitude(nps) ;
@@ -121,9 +121,10 @@ variables:
 		velocity_z:units = "m/s" ;
 	float temperature(nps) ;
 		temperature:units = "K" ;
-	float surface\ dynamic\ topography(nps) ;
-		surface\ dynamic\ topography:units = "km" ;
+	float radial\ stress(nps) ;
+		radial\ stress:units = "Pa" ;
 
 // global attributes:
 		:version = 1. ;
+		:depth\ \(km\) = 0. ;
 
